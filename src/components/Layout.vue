@@ -10,5 +10,11 @@
 </template>
 
 <script>
-    import SideNav from '@/components/SideNav.vue';
+    import SideNav from './SideNav.vue';
+    export default {
+    name: 'Layout',
+    components: {
+        SideNav
+    }
+}
 </script>

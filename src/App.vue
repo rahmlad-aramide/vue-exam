@@ -1,22 +1,17 @@
 <script setup>
-  import Datafetching from './components/Datafetching.vue';
+  import SideNav from './components/SideNav.vue';
 </script>
 
 <template>
-  <!-- <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
+  <div class="grid grid-cols-12 font-Inter">
+    <header class="col-span-3">
+      <div>
+      <SideNav />
     </div>
-  </header> -->
-  <!-- <main>
-    <Datafetching />
-  </main> -->
-
-  <router-view></router-view>
+  </header>
+  <main class="col-span-9">
+    <router-view></router-view>
+  </main>
+</div>
 </template>
 
-<style scoped>
-
-</style>
