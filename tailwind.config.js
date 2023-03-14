@@ -18,7 +18,12 @@ module.exports = {
         'lightText': '#63687e',
     },
     fontFamily: {
-      'Inter': ['Inter', 'sans-serif']
+      'Inter': ['Inter', 'sans-serif'],
+      'Lancelot': ['Lancelot', 'cursive'],
+    },
+    backgroundImage: {
+      'desktop': 'url(./../assets/bg-sidebar-desktop.svg)',
+      'mobile': 'url(./../assets/bg-sidebar-mobile.svg)'
     }
   },
   plugins: [],
