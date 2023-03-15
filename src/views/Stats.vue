@@ -3,8 +3,8 @@
         <!-- <div class="h-32 rounded-lg m-4 bg-lightTop dark:bg-darkTop border-b border-b-dark/20 dark:border-b-white/20">
             
         </div> -->
-        <div class="w-[90%] md:w-full flex flex-col p-4 mx-auto md:mb-8 rounded-lg bg-lightCard shadow-lg">
-            <div class="font-bold text-2xl mb-2">
+        <div class="w-[90%] md:w-full flex flex-col p-6 mx-auto md:mb-8 rounded-lg bg-lightCard shadow-lg">
+            <div class="font-semibold text-2xl mb-2">
                 My profile statistical figures
             </div>
             <div>

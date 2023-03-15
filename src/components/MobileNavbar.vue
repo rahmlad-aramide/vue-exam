@@ -5,17 +5,17 @@
           <div class="flex">
             <button @click="showMenu = !showMenu" class="flex items-center">
               <svg class="w-6 h-6 text-light" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path v-if="showMenu" d="M4 6H20M4 12H20M4 18H20" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path v-if="!showMenu" d="M4 6H20M4 12H20M4 18H20" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                 <path v-else d="M4 8H20M4 12H20M4 16H20" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
             </button>
           </div>
         </div>
         <transition name="slide">
-          <div v-if="showMenu" class="bg-white rounded-md py-2 shadow-md">
-            <router-link to="/" class="block px-4 py-2 text-blue-700 font-medium underline decoration-wavy">Home</router-link>
-            <router-link to="/stats" class="block px-4 py-2 text-blue-700 font-medium underline decoration-wavy">Stats</router-link>
-            <router-link to="/repos" class="block px-4 py-2 text-blue-700 font-medium underline decoration-wavy">Repos</router-link>
+          <div v-if="showMenu" class="bg-white rounded-md py-2 shadow-md mt-2">
+            <router-link to="/" class="block px-8 py-2 text-blue-700 font-medium underline decoration-wavy">Home</router-link>
+            <router-link to="/stats" class="block px-8 py-2 text-blue-700 font-medium underline decoration-wavy">Stats</router-link>
+            <router-link to="/repos" class="block px-8 py-2 text-blue-700 font-medium underline decoration-wavy">Repos</router-link>
           </div>
         </transition>
       </div>
