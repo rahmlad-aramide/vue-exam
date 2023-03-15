@@ -27,8 +27,7 @@ const router = createRouter({
             component: Repos
         },
         {
-            // path: '/repos/:id',
-            path: '/repo',
+            path: '/repos/:id',
             name: 'Repo',
             component: Repo,
             props: true

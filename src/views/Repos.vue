@@ -27,8 +27,11 @@
                 <span class="text-dark text-lg font-medium items-center h-fit mb-2 w-full flex">{{ repo.name }}</span>
                 <span class="text-dark text-sm items-center h-fit mb-2 w-full flex">{{ repo.description }}</span>
                 <span>
-                    <a :href="repo.url" target="_blank"
-                        class="text-blue-700 cursor-pointer hover:underline decoration-wavy">View project</a>
+                    <router-link
+                        class="text-blue-700 cursor-pointer hover:underline decoration-wavy" 
+                        :to="{ name: 'Repo', params: { id: repo.id } }">
+                        View project
+                    </router-link>
                     |
                     <a :href="repo.url" target="_blank"
                         class="text-blue-700 cursor-pointer hover:underline decoration-wavy">View on Github</a>
