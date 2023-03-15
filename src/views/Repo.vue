@@ -1,8 +1,12 @@
   <template>
-    <div>
+    <div class="h-[calc(100vh_-_4rem)] md:h-[calc(100vh_-_2rem)] bg-lightCard p-6 rounded-lg overflow-y-auto">
       <!-- <p>{{repo}}</p> -->
-      <h2 v-for="(repo, index) in repo" :key="index">{{ repo }}</h2>
+
+    <h2 v-for="(value, key) in repo" :key="key">{{ key }}: {{ value }}</h2>
+      <!-- <h2 v-for="(repo, index) in repo" :key="index">{{ repo }}</h2> -->
       <h1 v-if="!repo">Loading...</h1>
+      <h3>{{repo.id}}</h3>
+
     </div>
   </template>
   
@@ -22,7 +26,7 @@
     });
     repo.value = filteredData[0]; // Update the value of the ref
   };
-  
+  console.log(typeof(repo))
   onMounted(() => {
     fetchRepo();
   });
