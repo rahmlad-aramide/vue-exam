@@ -1,6 +1,8 @@
   <template>
     <div>
-      <h2>{{ repo }}</h2>
+      <!-- <p>{{repo}}</p> -->
+      <h2 v-for="(repo, index) in repo" :key="index">{{ repo }}</h2>
+      <h1 v-if="!repo">Loading...</h1>
     </div>
   </template>
   
@@ -15,11 +17,9 @@
     const id = route.params.id;
     const response = await fetch(`https://api.github.com/users/rahmlad-aramide/repos`);
     const data = await response.json();
-    console.log(data);
     const filteredData = data.filter(item => {
       return item.id == id;
     });
-    console.log(filteredData[0]);
     repo.value = filteredData[0]; // Update the value of the ref
   };
   
