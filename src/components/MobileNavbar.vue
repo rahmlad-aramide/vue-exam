@@ -12,10 +12,10 @@
           </div>
         </div>
         <transition name="slide">
-          <div v-if="showMenu" class="bg-white border-b border-gray-200 py-2">
-            <router-link to="/" class="block px-4 py-2 text-gray-500 font-medium">Home</router-link>
-            <router-link to="/stats" class="block px-4 py-2 text-gray-500 font-medium">Stats</router-link>
-            <router-link to="/repos" class="block px-4 py-2 text-gray-500 font-medium">Repos</router-link>
+          <div v-if="showMenu" class="bg-white rounded-md py-2 shadow-md">
+            <router-link to="/" class="block px-4 py-2 text-blue-700 font-medium underline decoration-wavy">Home</router-link>
+            <router-link to="/stats" class="block px-4 py-2 text-blue-700 font-medium underline decoration-wavy">Stats</router-link>
+            <router-link to="/repos" class="block px-4 py-2 text-blue-700 font-medium underline decoration-wavy">Repos</router-link>
           </div>
         </transition>
       </div>

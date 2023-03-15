@@ -1,5 +1,5 @@
 <template>
-    <div class="h-[calc(100vh_-_4rem)] md:h-[calc(100vh_-_2rem)] overflow-y-auto pb-[2rem]">
+    <div class="h-[calc(100vh_-_4rem)] md:h-[calc(100vh_-_2rem)] overflow-y-auto pb-[0rem]">
         <div class="bg-lightCard mb-4 p-2 rounded-lg">
             <h1 class="p-4 text-2xl font-medium">{{ title }}</h1>
         </div>
@@ -35,14 +35,16 @@
                 </span>
             </li>
         </ul>
-        <div class="pagination">
-            <button :disabled="state.currentPage === 1" @click="state.currentPage--"
+        <div class="flex justify-center mt-4">
+            <div class="pagination">
+                <button :disabled="state.currentPage === 1" @click="state.currentPage--"
                 class="border border-blue-700 disabled:cursor-not-allowed px-2 mx-1 text-white bg-blue-700 hover:scale-90 active:scale-100 transition duration-200 disabled:opacity-50">Prev</button>
             <button v-for="page in pages" :key="page" :class="{ active: state.currentPage === page }"
                 class="border border-blue-700 px-2 mx-1 text-white bg-blue-700 hover:scale-90 active:scale-100 transition duration-200"
                 @click="state.currentPage = page">{{ page }}</button>
-            <button :disabled="state.currentPage === totalPages" @click="state.currentPage++"
+                <button :disabled="state.currentPage === totalPages" @click="state.currentPage++"
                 class="border border-blue-700 disabled:cursor-not-allowed px-2 mx-1 text-white bg-blue-700 hover:scale-90 active:scale-100 transition duration-200 disabled:opacity-50">Next</button>
+            </div>
         </div>
 
     </div>
@@ -104,5 +106,10 @@ export default {
 <style>
 button.active {
     color: blue;
+    background: #ddd;
+    border-radius: 4px;
+}
+button {
+    border-radius: 4px;
 }
 </style>

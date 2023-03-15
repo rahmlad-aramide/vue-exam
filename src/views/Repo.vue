@@ -63,7 +63,7 @@
   }
   </script>
    -->
-
+<!-- 
    <template>
     <div>
       <h1>Repositories</h1>
@@ -192,6 +192,76 @@
   
   button.active {
     background-color: #ddd;
+  }
+  </style>
+   -->
+
+   <template>
+    <div class="bg-white rounded-lg shadow-md overflow-hidden">
+      
+        <img class="w-full" :src="profilePictureUrl" alt="Profile picture">
+      <div class="p-4">
+        <h1 class="text-xl font-bold mb-2">@{{ username }}</h1>
+        <p class="text-gray-700 leading-relaxed">{{ bio }}</p>
+        <a href="#" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 mt-4 rounded-full inline-block">Follow</a>
+      </div>
+    </div>
+  </template>
+  
+  <script>
+  export default {
+    name: 'GitHubProfileCard',
+    props: {
+      username: {
+        type: String,
+        required: true
+      },
+      bio: {
+        type: String,
+        default: 'Software developer'
+      },
+      profilePictureUrl: {
+        type: String,
+        default: 'https://avatars.githubusercontent.com/u/username'
+      }
+    }
+  }
+  </script>
+  
+  <style scoped>
+  /* Set max width and center the card */
+  .card {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  
+  /* Style the profile picture */
+  .card img {
+    object-fit: cover;
+    object-position: center;
+    height: 200px;
+  }
+  
+  /* Add some padding and style the text */
+  .card .p-4 {
+    padding: 1.5rem;
+  }
+  
+  .card h1 {
+    font-size: 1.5rem;
+  }
+  
+  .card p {
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  /* Style the follow button */
+  .card a {
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1rem;
   }
   </style>
   
