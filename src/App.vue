@@ -1,5 +1,6 @@
 <script setup>
-  import SideNav from './components/SideNav.vue';
+  import MobileNavbar from './components/MobileNavbar.vue';
+import SideNav from './components/SideNav.vue';
 </script>
 
 <template>
@@ -13,11 +14,11 @@
       <div class="font-Lancelot font-black text-2xl text-white">
         Rahmlad
       </div> 
-      <div class="mt-1 text-white font-bold">
-        Open
+      <div class="">
+        <MobileNavbar />
       </div>
     </header>
-    <main class="col-span-12 md:col-span-9 -mt-[5.25rem] md:mt-4 mr-4">
+    <main class="col-span-12 md:col-span-9 -mt-[5.25rem] md:mt-4 mr-4 ml-4 md:ml-0">
     <router-view></router-view>
     </main>
   </div>

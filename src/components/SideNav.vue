@@ -1,5 +1,6 @@
 <template>
     <div class="h-screen p-2 border-dark/20 dark:border-light/20 text-center">
+        <mobile-navbar />
         <div class="h-[calc(100%_-_1rem)] bg-desktop bg-cover bg-bottom rounded-lg my-2 mx-4 backdrop-blur-lg bg-blue-700 dark:bg-dark text-light">
             <div class="h-20">
 
@@ -20,11 +21,15 @@
                 </div>
             </router-link>
         </div>
+        
     </div>
 </template>
 
 <script>
+import MobileNavbar from './MobileNavbar.vue';
+
 export default {
-    name: 'SideNav',
+    name: "SideNav",
+    components: { MobileNavbar }
 }
 </script>
