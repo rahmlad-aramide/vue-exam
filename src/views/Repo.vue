@@ -1,16 +1,21 @@
   <template>
     <div class="h-[calc(100vh_-_4rem)] md:h-[calc(100vh_-_2rem)] bg-lightCard p-6 rounded-lg overflow-y-auto">
     <!-- <h2 v-for="(value, key) in repo" :key="key">{{ key }}: {{ value }}</h2> -->
-    <h3>The table below present a few other information about the repository.</h3>
+    <h1 class="text-lg font-semibold mb-4">The table below present a few other information about the repository.</h1>
         <div>
           <h1 v-if="!repo">Loading...</h1>
         </div>
         <div v-if="repo">
-          <table>
-            <tr>
-              <th>Key</th>
-              <th>Value</th>
-            </tr>
+          <table class="table-auto">
+            <thead>
+              <tr>
+                <th>Key</th>
+                <th>Value</th>
+              </tr>
+            </thead>
+            <tbody>
+
+            
             <tr>
               <th>Repo name</th>
               <td>{{repo.name}}</td>
@@ -90,6 +95,7 @@
               <th>Has discussions</th>
               <td>{{repo.has_discussions}}</td>
             </tr>
+          </tbody>
           </table>
         </div>
 
