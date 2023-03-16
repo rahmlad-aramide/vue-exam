@@ -10,7 +10,7 @@
             <thead>
               <tr>
                 <th>Key</th>
-                <th>Value</th>
+                <th class="border-r-0">Value</th>
               </tr>
             </thead>
             <tbody>
@@ -129,7 +129,7 @@
   table, th, td {
     border-bottom: 1px solid blue;
   }
-  th {
+  th:not(:nth-child(2)) {
     border-right: 1px solid blue;
   }
 
