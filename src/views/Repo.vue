@@ -127,8 +127,10 @@
 
   <style scoped>
   table, th, td {
-    border: 1px solid black;
-    border-collapse: collapse;
+    border-bottom: 1px solid blue;
+  }
+  th {
+    border-right: 1px solid blue;
   }
 
 </style>
