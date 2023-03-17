@@ -3,7 +3,7 @@
     <!-- <h2 v-for="(value, key) in repo" :key="key">{{ key }}: {{ value }}</h2> -->
     <h1 class="text-lg font-semibold mb-4">The table below present a few other information about the repository.</h1>
         <div>
-          <h1 v-if="!repo">Loading...</h1>
+          <h1 v-if="!repo" class="animate-spin">Loading...</h1>
         </div>
         <div v-if="repo">
           <table class="table-auto">
@@ -15,6 +15,11 @@
             </thead>
             <tbody>
 
+              <button v-if="!repo" type="button" class="bg-indigo-500 ..." disabled>
+                <svg class="animate-spin h-5 w-5 mr-3 ..." viewBox="0 0 24 24">
+                </svg>
+                Processing...
+              </button>
             
             <tr>
               <th>Repo name</th>
@@ -92,6 +97,18 @@
               <td>{{repo.has_pages}}</td>
             </tr>
             <tr>
+              <th>Creation date</th>
+              <td>{{dateConverter(repo.created_at)}}</td>
+            </tr>
+            <tr>
+              <th>Updation date</th>
+              <td>{{dateConverter(repo.updated_at)}}</td>
+            </tr>
+            <tr>
+              <th>Push date</th>
+              <td>{{dateConverter(repo.pushed_at)}}</td>
+            </tr>
+            <tr>
               <th>Has discussions</th>
               <td>{{repo.has_discussions}}</td>
             </tr>
@@ -109,6 +126,7 @@
   
   const route = useRoute();
   const repo = ref(null);
+  // const creationDate = ref(null);
   
   const fetchRepo = async () => {
     const id = route.params.id;
@@ -119,10 +137,15 @@
     });
     repo.value = filteredData[0];
   };
-  console.log(typeof(repo))
+  const dateConverter = (date) => {
+    const newDate = new Date(date);
+    const options = { year: "numeric", month: "long", day: "numeric" };
+    return newDate.toLocaleDateString("en-US", options);
+  }
   onMounted(() => {
     fetchRepo();
   });
+  
   </script>
 
   <style scoped>
