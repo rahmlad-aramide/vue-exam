@@ -1,11 +1,22 @@
   <template>
     <div class="h-[calc(100vh_-_4rem)] md:h-[calc(100vh_-_2rem)] bg-lightCard p-6 rounded-lg overflow-y-auto">
     <!-- <h2 v-for="(value, key) in repo" :key="key">{{ key }}: {{ value }}</h2> -->
-    <h1 class="text-lg font-semibold mb-4">The table below present a few other information about the repository.</h1>
-        <div>
-          <h1 v-if="!repo" class="animate-spin">Loading...</h1>
+    <h1 class="text-lg font-semibold mb-4 text-center">The table below present a few other information about the repository.</h1>
+    <div v-if="!repo" class="flex justify-center my-10 h-10">
+      <div class="w-fit relative">
+        <div class="absolute -top-1.5 -right-1.5">
+          <span class="relative flex h-4 w-4">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-sky-400 opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-4 w-4 bg-sky-500"></span>
+          </span>
         </div>
-        <div v-if="repo">
+        <div class="border border-blue-500 rounded p-1 px-4 w-fit">
+          Loading table...
+        </div>
+      </div>
+    </div>
+        <div v-if="repo" class="flex justify-center">
+          <div class="flex justify-start md:justify-center overflow-y-auto w-full">
           <table class="table-auto">
             <thead>
               <tr>
@@ -14,13 +25,6 @@
               </tr>
             </thead>
             <tbody>
-
-              <button v-if="!repo" type="button" class="bg-indigo-500 ..." disabled>
-                <svg class="animate-spin h-5 w-5 mr-3 ..." viewBox="0 0 24 24">
-                </svg>
-                Processing...
-              </button>
-            
             <tr>
               <th>Repo name</th>
               <td>{{repo.name}}</td>
@@ -41,7 +45,7 @@
             </tr>
             <tr>
               <th>License</th>
-              <td>{{repo.license.spdx_id}}</td>
+              <td>{{repo?.license?.name || "None"}}</td>
             </tr>
             <tr>
               <th>Default branch</th>
@@ -115,6 +119,7 @@
           </tbody>
           </table>
         </div>
+        </div>
 
     </div>
   </template>
@@ -122,11 +127,9 @@
   <script setup>
   import { onMounted, ref } from 'vue';
   import { useRoute } from 'vue-router';
-  // import data from './../components/data';
   
   const route = useRoute();
   const repo = ref(null);
-  // const creationDate = ref(null);
   
   const fetchRepo = async () => {
     const id = route.params.id;
@@ -135,7 +138,9 @@
     const filteredData = data.filter(item => {
       return item.id == id;
     });
-    repo.value = filteredData[0];
+    setTimeout(()=>{
+      repo.value = filteredData[0];
+    }, 1000)
   };
   const dateConverter = (date) => {
     const newDate = new Date(date);
@@ -151,6 +156,10 @@
   <style scoped>
   table, th, td {
     border-bottom: 1px solid blue;
+    padding: 2px 6px;
+  }
+  td {
+    padding-inline: 1.5rem;
   }
   th:not(:nth-child(2)) {
     border-right: 1px solid blue;

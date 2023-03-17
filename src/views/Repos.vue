@@ -4,13 +4,21 @@
             <h1 class="p-4 text-2xl font-medium">{{ title }}</h1>
         </div>
         <div v-if="state.loading" class="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <li class="flex flex-col justify-center transition duration-200 rounded-lg hover:scale-95 active:scale-100 p-4 bg-lightCard">
-                <span class="items-center bg-gray-300 h-2 mb-6 mt-2 w-full flex"></span>
-                <span class="items-center h-2 bg-gray-300 mb-2 w-full flex"></span>
+            <li class="animate-pulse border border-blue-200 flex flex-col justify-center transition duration-200 rounded-lg hover:scale-95 active:scale-100 p-4 bg-lightCard">
+                <span class="items-center bg-gray-300 h-2 mb-6 mt-2 w-full flex rounded"></span>
+                <span class="items-center h-2 bg-gray-300 mb-2 w-full flex rounded"></span>
+                <div class="grid grid-cols-3 gap-4 mt-3">
+                    <div class="h-2 bg-gray-300 rounded col-span-1"></div>
+                    <div class="h-2 bg-gray-300 rounded col-span-1"></div>
+                </div>
             </li>
-            <li class="flex flex-col justify-center transition duration-200 rounded-lg hover:scale-95 active:scale-100 p-4 bg-lightCard">
-                <span class="items-center bg-gray-300 h-2 mb-6 mt-2 w-full flex"></span>
-                <span class="items-center h-2 bg-gray-300 mb-2 w-full flex"></span>
+            <li class="animate-pulse border border-blue-200 flex flex-col justify-center transition duration-200 rounded-lg hover:scale-95 active:scale-100 p-4 bg-lightCard">
+                <span class="items-center bg-gray-300 h-2 mb-6 mt-2 w-full flex rounded"></span>
+                <span class="items-center h-2 bg-gray-300 mb-2 w-full flex rounded"></span>
+                <div class="grid grid-cols-3 gap-4 mt-3">
+                    <div class="h-2 bg-gray-300 rounded col-span-1"></div>
+                    <div class="h-2 bg-gray-300 rounded col-span-1"></div>
+                </div>
             </li>
         </div>
         <ul v-if="!state.loading" class="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -30,12 +38,12 @@
                 </span>
             </li>
         </ul>
-        <div class="flex justify-center mt-4">
+        <div v-if="!state.loading" class="flex justify-center mt-4">
             <div class="pagination">
                 <button :disabled="state.currentPage === 1" @click="state.currentPage--"
                 class="border border-blue-700 disabled:cursor-not-allowed px-2 mx-1 text-white bg-blue-700 hover:scale-90 active:scale-100 transition duration-200 disabled:opacity-50">Prev</button>
             <button v-for="page in pages" :key="page" :class="{ active: state.currentPage === page }"
-                class="border border-blue-700 px-2 mx-1 text-white bg-blue-700 hover:scale-90 active:scale-100 transition duration-200"
+                class="border border-blue-700 px-1.5 md:px-2 mx-0.5 md:mx-1 text-white bg-blue-700 hover:scale-90 active:scale-100 transition duration-200"
                 @click="state.currentPage = page">{{ page }}</button>
                 <button :disabled="state.currentPage === totalPages" @click="state.currentPage++"
                 class="border border-blue-700 disabled:cursor-not-allowed px-2 mx-1 text-white bg-blue-700 hover:scale-90 active:scale-100 transition duration-200 disabled:opacity-50">Next</button>
@@ -83,7 +91,7 @@ export default {
             }));
             setTimeout(()=>{
                 state.loading = false;
-            }, 2000)
+            }, 1000)
         };
 
         onMounted(() => {

@@ -9,23 +9,23 @@
             </div>
             <div v-if="!user" class="h-3 bg-gray-200 rounded-lg"></div>
         </div>
-        <div v-if="!user" class="grid grid-cols-12 md:gap-10 gap-y-6 my-4 pt-4">
-            <div class="animate-pulse col-span-12 p-4 sm:col-span-6 md:col-span-4 lg:col-span-3 m-4 relative cursor-pointer transition duration-200 hover:scale-90 active:scale-100 flex flex-col rounded-lg justify-center items-center aspect-square bg-lightCard dark:bg-darkCard shadow-lg">
+        <div v-if="!user" class="grid grid-cols-12 gap-4 sm:gap-2 md:gap-6 gap-y-6 my-4 pt-4">
+            <div class="animate-pulse border border-blue-200 col-span-6 p-4 sm:col-span-4 md:col-span-3 lg:col-span-3 m-4 relative cursor-pointer transition duration-200 hover:scale-90 active:scale-100 flex flex-col rounded-lg justify-center items-center aspect-square bg-lightCard dark:bg-darkCard shadow-lg">
                 <span class="bg-red-500 w-full h-2 top-0 rounded-t-lg flex absolute"></span>
                 <span class="h-10 w-10 rounded-full bg-red-500 flex justify-center items-center mb-2"></span>
                 <div v-if="!user" class="h-3 w-12 bg-gray-300 rounded-lg"></div>
             </div>
-            <div class="animate-pulse col-span-12 p-4 sm:col-span-6 md:col-span-4 lg:col-span-3 m-4 relative cursor-pointer transition duration-200 hover:scale-90 active:scale-100 flex flex-col rounded-lg justify-center items-center aspect-square bg-lightCard dark:bg-darkCard shadow-lg">
+            <div class="animate-pulse border border-blue-200 col-span-6 p-4 sm:col-span-4 md:col-span-3 lg:col-span-3 m-4 relative cursor-pointer transition duration-200 hover:scale-90 active:scale-100 flex flex-col rounded-lg justify-center items-center aspect-square bg-lightCard dark:bg-darkCard shadow-lg">
                 <span class="bg-orange-500 w-full h-2 top-0 rounded-t-lg flex absolute"></span>
                 <span class="h-10 w-10 rounded-full bg-orange-500 flex justify-center items-center mb-2"></span>
                 <div v-if="!user" class="h-3 w-12 bg-gray-300 rounded-lg"></div>
             </div>
-            <div class="animate-pulse col-span-12 p-4 sm:col-span-6 md:col-span-4 lg:col-span-3 m-4 relative cursor-pointer transition duration-200 hover:scale-90 active:scale-100 flex flex-col rounded-lg justify-center items-center aspect-square bg-lightCard dark:bg-darkCard shadow-lg">
+            <div class="animate-pulse border border-blue-200 col-span-6 p-4 sm:col-span-4 md:col-span-3 lg:col-span-3 m-4 relative cursor-pointer transition duration-200 hover:scale-90 active:scale-100 flex flex-col rounded-lg justify-center items-center aspect-square bg-lightCard dark:bg-darkCard shadow-lg">
                 <span class="bg-yellow-500 w-full h-2 top-0 rounded-t-lg flex absolute"></span>
                 <span class="h-10 w-10 rounded-full bg-yellow-500 flex justify-center items-center mb-2"></span>
                 <div v-if="!user" class="h-3 w-12 bg-gray-300 rounded-lg"></div>
             </div>
-            <div class="animate-pulse col-span-12 p-4 sm:col-span-6 md:col-span-4 lg:col-span-3 m-4 relative cursor-pointer transition duration-200 hover:scale-90 active:scale-100 flex flex-col rounded-lg justify-center items-center aspect-square bg-lightCard dark:bg-darkCard shadow-lg">
+            <div class="animate-pulse border border-blue-200 col-span-6 p-4 sm:col-span-4 md:col-span-3 lg:col-span-3 m-4 relative cursor-pointer transition duration-200 hover:scale-90 active:scale-100 flex flex-col rounded-lg justify-center items-center aspect-square bg-lightCard dark:bg-darkCard shadow-lg">
                 <span class="bg-green-500 w-full h-2 top-0 rounded-t-lg flex absolute"></span>
                 <span class="h-10 w-10 rounded-full bg-green-400 flex justify-center items-center mb-2"></span>
                 <div v-if="!user" class="h-3 w-12 bg-gray-300 rounded-lg"></div>
@@ -33,29 +33,29 @@
         </div>
 
         <div v-if="user" class="grid grid-cols-12 md:gap-10 gap-y-6 my-4 pt-4">
-            <div class="col-span-12 p-4 sm:col-span-6 md:col-span-4 lg:col-span-3 m-4 relative cursor-pointer transition duration-200 hover:scale-90 active:scale-100 flex flex-col rounded-lg justify-center items-center aspect-square bg-lightCard dark:bg-darkCard shadow-lg">
+            <div class="col-span-6 p-4 sm:col-span-4 md:col-span-3 lg:col-span-3 m-4 relative cursor-pointer transition duration-200 hover:scale-90 active:scale-100 flex flex-col rounded-lg justify-center items-center aspect-square bg-lightCard dark:bg-darkCard shadow-lg">
                 <span class="bg-red-500 w-full h-2 top-0 rounded-t-lg flex absolute"></span>
                 <span class="h-10 w-10 rounded-full bg-red-200 flex justify-center items-center mb-2"><img class="h-7 w-7" src="./../assets/following.svg" alt=""></span>
-                <div class="font-black text-7xl">{{user.following}}</div>
-                <span class="text-xl">Following</span>
+                <div class="font-black  text-6xl md:text-7xl">{{user.following}}</div>
+                <span class="text-lg md:text-xl">Following</span>
             </div>
-            <div class="col-span-12 p-4 sm:col-span-6 md:col-span-4 lg:col-span-3 m-4 relative cursor-pointer transition duration-200 hover:scale-90 active:scale-100 flex flex-col rounded-lg justify-center items-center aspect-square bg-lightCard dark:bg-darkCard shadow-lg">
+            <div class="col-span-6 p-4 sm:col-span-4 md:col-span-3 lg:col-span-3 m-4 relative cursor-pointer transition duration-200 hover:scale-90 active:scale-100 flex flex-col rounded-lg justify-center items-center aspect-square bg-lightCard dark:bg-darkCard shadow-lg">
                 <span class="bg-orange-500 w-full h-2 top-0 rounded-t-lg flex absolute"></span>
                 <span class="h-10 w-10 rounded-full bg-orange-200 flex justify-center items-center mb-2"><img class="h-7 w-7" src="./../assets/followers.svg" alt=""></span>
-                <div class="font-black text-7xl">{{user.followers}}</div>
-                <span class="text-xl">Followers</span>
+                <div class="font-black  text-6xl md:text-7xl">{{user.followers}}</div>
+                <span class="text-lg md:text-xl">Followers</span>
             </div>
-            <div class="col-span-12 p-4 sm:col-span-6 md:col-span-4 lg:col-span-3 m-4 relative cursor-pointer transition duration-200 hover:scale-90 active:scale-100 flex flex-col rounded-lg justify-center items-center aspect-square bg-lightCard dark:bg-darkCard shadow-lg">
+            <div class="col-span-6 p-4 sm:col-span-4 md:col-span-3 lg:col-span-3 m-4 relative cursor-pointer transition duration-200 hover:scale-90 active:scale-100 flex flex-col rounded-lg justify-center items-center aspect-square bg-lightCard dark:bg-darkCard shadow-lg">
                 <span class="bg-yellow-500 w-full h-2 top-0 rounded-t-lg flex absolute"></span>
                 <span class="h-10 w-10 rounded-full bg-yellow-400 flex justify-center items-center mb-2"><img class="h-7 w-7" src="./../assets/gists.svg" alt=""></span>
-                <div class="font-black text-7xl">{{ user.public_gists }}</div>
-                <span class="text-xl">Gists</span>
+                <div class="font-black  text-6xl md:text-7xl">{{ user.public_gists }}</div>
+                <span class="text-lg md:text-xl">Gists</span>
             </div>
-            <div class="col-span-12 p-4 sm:col-span-6 md:col-span-4 lg:col-span-3 m-4 relative cursor-pointer transition duration-200 hover:scale-90 active:scale-100 flex flex-col rounded-lg justify-center items-center aspect-square bg-lightCard dark:bg-darkCard shadow-lg">
+            <div class="col-span-6 p-4 sm:col-span-4 md:col-span-3 lg:col-span-3 m-4 relative cursor-pointer transition duration-200 hover:scale-90 active:scale-100 flex flex-col rounded-lg justify-center items-center aspect-square bg-lightCard dark:bg-darkCard shadow-lg">
                 <span class="bg-green-500 w-full h-2 top-0 rounded-t-lg flex absolute"></span>
                 <span class="h-10 w-10 rounded-full bg-green-400 flex justify-center items-center mb-2"><img class="h-7 w-7" src="./../assets/repos.svg" alt=""></span>
-                <div class="font-black text-7xl">{{user.public_repos}}</div>
-                <span class="text-xl">Repos</span>
+                <div class="font-black text-6xl md:text-7xl">{{user.public_repos}}</div>
+                <span class="text-lg md:text-xl">Repos</span>
             </div>
         </div>
     </div>
@@ -80,7 +80,7 @@ export default {
                 const date = new Date(data.created_at);
                 const options = { year: "numeric", month: "long", day: "numeric" };
                 this.convertedDate = date.toLocaleDateString("en-US", options);
-            }, 2000)
+            }, 1000)
         })
     }
 }
