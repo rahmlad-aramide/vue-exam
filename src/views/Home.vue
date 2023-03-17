@@ -33,20 +33,20 @@
         </div>      
           <div v-if="!user" class="grid grid-cols-12 p-2 md:p-6 bg-lightCard rounded-lg shadow-lg overflow-hidden border-blue-300">
             <div class="animate-pulse col-span-12 grid place-content-center md:place-content-start mt-4 md:mt-0 md:col-span-3">
-                <div class="h-32 w-32 bg-slate-700 rounded-full"></div>
+                <div class="h-32 w-32 bg-gray-300 rounded-full"></div>
             </div>
             <div class="animate-pulse p-4 col-span-12 md:col-span-9 grid grid-cols-12 place-content-center">
                 <div class="col-span-12 md:col-span-9 mx-2 text-center md:text-left">
                     <div class="space-y-10">
                         <div class="grid grid-cols-3 gap-4">
-                          <div class="h-3 bg-slate-700 rounded col-span-2"></div>
-                          <div class="h-3 bg-slate-700 rounded col-span-1"></div>
+                          <div class="h-3 bg-gray-300 rounded col-span-2"></div>
+                          <div class="h-3 bg-gray-300 rounded col-span-1"></div>
                         </div>
-                        <div class="h-3 bg-slate-700 rounded"></div>
+                        <div class="h-3 bg-gray-300 rounded"></div>
                     </div>
                 </div>
                 <div class="col-span-12 grid place-content-center md:col-span-3">
-                    <div class="h-3 bg-slate-700 rounded"></div>                
+                    <div class="h-3 bg-gray-300 rounded"></div>                
                 </div>
             </div>
             <div class="animate-pulse col-span-12 mt-6 grid grid-cols-12 place-content-center">
@@ -54,10 +54,10 @@
                 <div class="col-span-10 p-4 mb-6 bg-light shadow-sm rounded-md">
                     <div class="space-y-10">
                         <div class="grid grid-cols-3 gap-4">
-                          <div class="h-3 bg-slate-700 rounded col-span-2"></div>
-                          <div class="h-3 bg-slate-700 rounded col-span-1"></div>
+                          <div class="h-3 bg-gray-300 rounded col-span-2"></div>
+                          <div class="h-3 bg-gray-300 rounded col-span-1"></div>
                         </div>
-                        <div class="h-3 bg-slate-700 rounded"></div>
+                        <div class="h-3 bg-gray-300 rounded"></div>
                     </div>
                 </div>
             </div>
@@ -75,9 +75,11 @@ export default {
         };
     },
     mounted() {
-        fetch("https://api.github.com/users/rahmlad-aramide")
-            .then(response => response.json())
-            .then(data => this.user = data);
+        setTimeout(()=>{
+            fetch("https://api.github.com/users/rahmlad-aramide")
+                .then(response => response.json())
+                .then(data => this.user = data);
+        },2000)
     },
 }
 

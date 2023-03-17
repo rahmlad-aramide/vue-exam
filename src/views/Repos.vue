@@ -5,20 +5,12 @@
         </div>
         <div v-if="state.loading" class="grid grid-cols-1 md:grid-cols-2 gap-4">
             <li class="flex flex-col justify-center transition duration-200 rounded-lg hover:scale-95 active:scale-100 p-4 bg-lightCard">
-                <span class="text-dark text-lg font-medium items-center h-fit mb-2 w-full flex">Loading repo Name...</span>
-                <span class="text-dark text-sm items-center h-fit mb-2 w-full flex">Loading repo description...</span>
-                <span>
-                    <a
-                        class="text-blue-700 cursor-pointer hover:underline decoration-wavy">Loading links...</a>
-                </span>
+                <span class="items-center bg-gray-300 h-2 mb-6 mt-2 w-full flex"></span>
+                <span class="items-center h-2 bg-gray-300 mb-2 w-full flex"></span>
             </li>
             <li class="flex flex-col justify-center transition duration-200 rounded-lg hover:scale-95 active:scale-100 p-4 bg-lightCard">
-                <span class="text-dark text-lg font-medium items-center h-fit mb-2 w-full flex">Loading repo Name...</span>
-                <span class="text-dark text-sm items-center h-fit mb-2 w-full flex">Loading repo description...</span>
-                <span>
-                    <a
-                        class="text-blue-700 cursor-pointer hover:underline decoration-wavy">Loading links...</a>
-                </span>
+                <span class="items-center bg-gray-300 h-2 mb-6 mt-2 w-full flex"></span>
+                <span class="items-center h-2 bg-gray-300 mb-2 w-full flex"></span>
             </li>
         </div>
         <ul v-if="!state.loading" class="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -89,11 +81,13 @@ export default {
                 id: repo.id,
                 url: repo.html_url
             }));
-            state.loading = false;
+            setTimeout(()=>{
+                state.loading = false;
+            }, 2000)
         };
 
         onMounted(() => {
-            fetchRepos();
+                fetchRepos();
         });
 
         return {
